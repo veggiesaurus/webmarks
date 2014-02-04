@@ -57,12 +57,13 @@
     <Content Include="public\stylesheets\jquerymobile\jquery.mobile.theme-1.3.2.min.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
-    <Content Include="views\index.jade" />
+    <Content Include="views\errorDatabase.jade" />
+    <Content Include="views\marks.jade" />
     <Content Include="views\invalidCourse.jade" />
     <Content Include="views\invalidStudent.jade" />
     <Content Include="views\layout.jade" />
-    <Content Include="views\noCourse.jade" />
-    <Content Include="views\noStudent.jade" />
+    <Content Include="views\selectCourse.jade" />
+    <Content Include="views\selectStudent.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />

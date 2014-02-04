@@ -1,0 +1,15 @@
+﻿extends layout
+
+block content
+	div#page1(data-role='page')
+		div(data-theme='a',data-role='header')
+			h3 WebMarks 
+		div(data-role='content')			
+			a(class="ui-body ui-body-e", align="center")
+				|There was a problem accessing the database. Please try later. If the problem persists, contact your course convenor
+			div(data-role="collapsible",data-content-theme="e",align="center")				
+				h3 Error info
+				a(class="ui-body ui-body-e", align="center")
+					p #{errorInfo}
+					p Course code: #{urlCourseCode}
+					p Student ID: #{studentID}
