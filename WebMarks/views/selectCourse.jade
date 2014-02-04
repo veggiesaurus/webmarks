@@ -1,0 +1,39 @@
+﻿extends layout
+block headerScripts
+	script.
+		$(document).ready(function()
+		{  
+			$("#errMissingID").hide();
+		});
+		function viewMarks()
+		{
+			var studentID=$("#textName").val();
+			if (!studentID)				
+			{
+				$("#errMissingID").slideDown();
+				return;
+			}
+			var currentURL=String(window.location);
+			currentURL=currentURL.replace(/\/+$/, "");			
+			var newURL=(currentURL+"/"+$("#selectCourse").val()+"/"+studentID);
+			window.location=newURL;
+		}
+
+block content
+	div#page1(data-role='page')
+		div(data-theme='a',data-role='header')
+			h3 WebMarks: Select course
+		div(data-role='content')			
+			div(data-role="fieldcontain")
+				a(for="selectCourse", class="ui-body ui-body-d", align="center")
+					h3 Select course code and enter student ID
+					select(name="selectCourse", id="selectCourse", data-corners="false",align="center")
+						- for (var i = 0; i < courseInfo.length; i++) {				
+						option(value="#{courseInfo[i].coursePrefix}") #{courseInfo[i].courseName}
+						- }				
+					input(type="text",name="textName",id="textName", data-clear-btn="true",placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
+					input(type="button", id="buttonViewMarks", name="buttonViewMarks", align="center",data-theme="b",data-corners="false",value="View Marks", onClick="viewMarks()")
+			a(class="ui-body ui-body-e", align="center")
+				|Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
+			a(class="ui-body ui-body-e ", align="center",id="errMissingID")
+				| Please enter a student ID
