@@ -1,16 +1,12 @@
 {
   "name": "ExpressAppMarks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ExpressAppMarks",
-  "main": "app.js",
-  "author": {
-    "name": "Angus",
-    "email": ""
-  },
+  "main": "app.js",  
   "dependencies": {
     "express": "latest",
     "stylus": "latest",
     "jade": "latest",
-    "mysql": "latest",
+    "mysql": "latest"
   }
 }
