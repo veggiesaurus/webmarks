@@ -25,6 +25,8 @@ block content
 							|#{cats[averages[i].typeID-1].categoryName}
 							- if (averages[i].average>=0)
 								| : #{averages[i].average} %
+							- else if (averages[i].average ==-2)
+								| : Exempt
 					ul(data-role="listview",data-content-theme='d',data-theme='d')				
 						- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++){					
 						li							
