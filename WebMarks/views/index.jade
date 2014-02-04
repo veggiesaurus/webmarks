@@ -1,0 +1,35 @@
+extends layout
+
+block headerScripts
+	script.
+		var hists=!{hists}
+		var courseName="#{courseName}"
+	script(src='/javascripts/highcharts/js/highcharts.js')
+	script(src='/javascripts/client.js')
+
+block content
+	div#page1(data-role='page')
+		div(data-theme='b',data-role='header')
+			h3 WebMarks 
+				div#header #{courseName}
+		div(data-role='content')			
+			a(class="ui-body ui-body-e", data-theme='b',align="center")				
+				| #{studentName} (#{studentID})
+				p
+				| Updated on #{updateDate}
+			div(data-role='collapsible-set', data-theme='b', data-content-theme='b',data-inset="false")
+				- for (var i = 0, j = 0; i < averages.length; i++) {
+				#resultCollapsible(data-role='collapsible', data-collapsed='true')
+					h3 
+						span#resultHeading
+							|#{cats[averages[i].typeID-1].categoryName}
+							- if (averages[i].average>=0)
+								| : #{averages[i].average} %
+					ul(data-role="listview",data-content-theme='d',data-theme='d')				
+						- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++){					
+						li							
+							| #{marks[j].entryName}: 
+							| #{marks[j].mark} / #{marks[j].maxMarks}						
+						- }	
+				- }			
+			#chart_container(data-role='content')

@@ -1,0 +1,16 @@
+{
+  "name": "ExpressAppMarks",
+  "version": "0.0.0",
+  "description": "ExpressAppMarks",
+  "main": "app.js",
+  "author": {
+    "name": "Angus",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "latest",
+    "stylus": "latest",
+    "jade": "latest",
+    "mysql": "latest",
+  }
+}
