@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -14,7 +13,7 @@ var path = require('path');
 var mysql      = require('mysql');
 
 var db_config = {
-  host: 'localhost',
+  host: 'webapp-phy.uct.ac.za',
    user: 'webapp_reader',
    password: 'quantumReader',
    database: 'webapp'
