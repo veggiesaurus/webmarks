@@ -1,4 +1,9 @@
 ﻿extends layout
+block bannerImage
+	div(align="center")
+		p
+		img(src="/webmarks/images/banner.jpg")
+
 block headerScripts
 	script.
 		$(document).ready(function()
@@ -23,9 +28,10 @@ block content
 	div#page1(data-role='page')
 		div(data-theme='b',data-role='header')
 			div(align="center")
-				h3 UCT Physics WebMarks 					
-		div(data-role='content')			
-			div(data-role="fieldcontain")
+				h3 UCT Physics WebMarks
+		block bannerImage 					
+		div(data-role='content', align="center")			
+			div(data-role="fieldcontain", align="center")
 				a(for="selectCourse", class="ui-body ui-body-d", align="center")					
 					input(type="text",name="textName",id="textName", data-clear-btn="true",placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
 					input(type="button", id="buttonViewMarks", name="buttonViewMarks", align="center",data-theme="b",data-corners="false",value="View Marks", onClick="viewMarks()")

@@ -13,7 +13,8 @@ var path = require('path');
 var mysql      = require('mysql');
 
 var db_config = {
-  host: 'webapp-phy.uct.ac.za',
+  //host: 'webapp-phy.uct.ac.za',
+  host: '127.0.0.1',
    user: 'webapp_reader',
    password: 'quantumReader',
    database: 'webapp'
