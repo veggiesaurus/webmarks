@@ -1,4 +1,9 @@
 ﻿extends layout
+block bannerImage
+	div(align="center")
+		p
+		img(src="/webmarks/images/banner.jpg")
+
 block headerScripts
 	script.
 		$(document).ready(function()
@@ -8,26 +13,29 @@ block headerScripts
 		function viewMarks()
 		{
 			var studentID=$("#textName").val();
-			if (!studentID)				
+			var courseCode=$("#selectCourse").val();
+			if (!studentID || courseCode==-1)				
 			{
-				$("#errMissingID").slideDown();
+				$("#errMissingID").slideDown();				
 				return;
 			}
 			var currentURL=String(window.location);
 			currentURL=currentURL.replace(/\/+$/, "");			
-			var newURL=(currentURL+"/"+$("#selectCourse").val()+"/"+studentID);
+			var newURL=(currentURL+"/"+courseCode+"/"+studentID);
 			window.location=newURL;
 		}
 
-block content
+block content	
 	div#page1(data-role='page')
 		div(data-theme='b',data-role='header')
 			div(align="center")
-				h3 UCT Physics WebMarks 					
-		div(data-role='content')			
-			div(data-role="fieldcontain")
+				h3 UCT Physics WebMarks 							
+		block bannerImage
+		div(data-role='content', align="center")			
+			div(data-role="fieldcontain", align="center")
 				a(for="selectCourse", class="ui-body ui-body-d", align="center")					
 					select(name="selectCourse", id="selectCourse", data-corners="false",align="center")
+						option(value="-1") Select your course...
 						- for (var i = 0; i < courseInfo.length; i++) {				
 						option(value="#{courseInfo[i].coursePrefix}") #{courseInfo[i].courseName}
 						- }	
@@ -36,4 +44,4 @@ block content
 					input(type="button", id="buttonViewMarks", name="buttonViewMarks", align="center",data-theme="b",data-corners="false",value="View Marks", onClick="viewMarks()")
 			a(class="ui-body ui-body-d", align="center") Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
 			p
-				a(class="ui-body ui-body-e ", align="center",id="errMissingID") Please enter a student ID
+				a(class="ui-body ui-body-e ", align="center",id="errMissingID") Please choose your course and enter a student ID
