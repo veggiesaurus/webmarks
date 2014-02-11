@@ -15,6 +15,9 @@ build/
 [Bb]in/
 [Oo]bj/
 
+#node modules
+node_modules/
+
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
 
@@ -157,3 +160,4 @@ $RECYCLE.BIN/
 /dept_spreadsheet_v4_2013_MacrosSelfPopulating.xlsm
 /PHY1004W_2013_WebAppUpload.xlsm
 /PHY1032S_2013_WebAppUpload.xlsm
+Webmarks/node_modules/

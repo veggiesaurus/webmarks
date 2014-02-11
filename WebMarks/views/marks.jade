@@ -4,8 +4,8 @@ block headerScripts
 	script.
 		var hists=!{hists}
 		var courseName="#{courseName}"
-	script(src='/javascripts/highcharts/js/highcharts.js')
-	script(src='/javascripts/client.js')
+	script(src='/webmarks/javascripts/highcharts/js/highcharts.js')
+	script(src='/webmarks/javascripts/client.js')
 
 block content
 	div#page1(data-role='page')
@@ -13,8 +13,8 @@ block content
 			div(align="center")
 				h3 UCT Physics WebMarks 
 					div#header #{courseName}
-		div(data-role='content')			
-			a(class="ui-body ui-body-d", data-theme='b',align="center")				
+		div(data-role='content')
+			a(class="ui-body ui-body-d", data-theme='b',align="center")
 				| #{studentName} (#{studentID})
 				p
 				| Updated on #{updateDate}
@@ -28,9 +28,9 @@ block content
 								| : #{averages[i].average} %
 							- else if (averages[i].average ==-2)
 								| : Exempt
-					ul(data-role="listview",data-content-theme='d',data-theme='d')				
+					ul(data-role="listview",data-content-theme='d',data-theme='d')
 						- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++){					
-						li							
+						li
 							| #{marks[j].entryName}: 
 							| #{marks[j].mark} / #{marks[j].maxMarks}						
 						- }	
