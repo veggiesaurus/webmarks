@@ -158,10 +158,50 @@ app.get("/:id([0-9]+):courseType(w|f|h|s)\/:studentID", function(req, res)
     });	
 });
 
+function displayRandomNames(res, courseCode, seed, numNames)
+{
+	console.log('selecting '+numNames+' names from '+courseCode + ' using seed of ' + seed);
+	//heading
+	var headings=["The Chosen Few", "Today's Contestants", "This Week's Winners"];	
+	var index=Math.floor((Math.random() * headings.length));
+	//res.render("randomNames", {randomNames:rows, headingText:headings[index]});	
+	
+    connection.query("SELECT DISTINCT studentID, name FROM `"+urlCourseCode+"_students` ORDER BY RAND("+seed+") LIMIT " + numNames,function(err, rows, fields)
+    {
+        if (err) throw err;
+        if (rows && rows.length)
+        {
+            res.render("randomNames", {names:rows, headingText:headings[index]});
+        }
+        else
+        {
+            res.render("errorDatabase");
+        }
+    });
+	
+}
+
+app.get("/rand/:id([0-9]+):courseType(w|f|h|s)\/seed/:seedVal", function(req, res)
+{
+	var urlCourseCode=req.params.id+req.params.courseType;
+    var seed=req.params.seedVal;
+	displayRandomNames(res, urlCourseCode, seed,  10);
+});
+
+app.get("/rand/:id([0-9]+):courseType(w|f|h|s)\/num/:numVal/seed/:seedVal", function(req, res)
+{
+	var urlCourseCode=req.params.id+req.params.courseType;
+    var seed=req.params.seedVal;
+	var numNames=req.params.numVal;
+	
+	displayRandomNames(res, urlCourseCode, seed,  numNames);
+});
+
 app.get("/:id([0-9]+):courseType(w|f|h|s)\?", function(req, res)
 {
     res.render("selectStudent");
 });
+
 
 app.get("/", function(req, res)
 {	
