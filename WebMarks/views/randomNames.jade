@@ -1,0 +1,21 @@
+extends layout
+block bannerImage
+	div(align="center")
+		p
+		//img(src="/webmarks/images/banner.jpg")
+
+block headerScripts
+
+block content	
+	div#page1(data-role='page')
+		div(data-theme='b',data-role='header')
+			div(align="center")
+				h3 UCT Physics WPS Lottery 							
+		block bannerImage
+		div(data-role='content', align="center")
+			h2(data-theme='b',data-role='header') #{headingText}
+			div 
+				ol(data-role="listview")			
+					- for (var i = 0; i < randomNames.length; i++) {				
+					li #{randomNames[i].studentID} (#{randomNames[i].name})
+					- }
