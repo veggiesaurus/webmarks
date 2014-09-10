@@ -13,9 +13,12 @@ block content
 				h3 UCT Physics WPS Lottery 							
 		block bannerImage
 		div(data-role='content', align="center")
-			h2(data-theme='b',data-role='header') #{headingText}
+			h1(data-theme='b',data-role='header') #{headingText}
 			div 
-				ol(data-role="listview")			
-					- for (var i = 0; i < names.length; i++) {				
-					li #{names[i].studentID} (#{names[i].name})
+				ol(data-role="listview", data-theme='c')			
+					- for (var i = 0; i < names.length; i++) {
+					- if (i %2 == 1 )
+						li(data-theme='b') #{names[i].studentID} (#{names[i].name})
+					- else
+						li(data-theme='c') #{names[i].studentID} (#{names[i].name})
 					- }
