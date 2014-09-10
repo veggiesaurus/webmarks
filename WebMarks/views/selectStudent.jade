@@ -32,9 +32,9 @@ block content
 		block bannerImage 					
 		div(data-role='content', align="center")			
 			div(data-role="fieldcontain", align="center")
-				a(for="selectCourse", class="ui-body ui-body-d", align="center")					
+				a(for="selectCourse", class="ui-body ui-body-b", align="center")					
 					input(type="text",name="textName",id="textName", data-clear-btn="true",placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
 					input(type="button", id="buttonViewMarks", name="buttonViewMarks", align="center",data-theme="b",data-corners="false",value="View Marks", onClick="viewMarks()")
-			a(class="ui-body ui-body-d", align="center") Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
+			a(class="ui-body ui-body-b", align="center") Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
 			p
 				a(class="ui-body ui-body-e ", align="center",id="errMissingID") Please enter a student ID

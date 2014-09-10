@@ -14,7 +14,7 @@ block content
 				h3 UCT Physics WebMarks 
 					div#header #{courseName}
 		div(data-role='content')
-			a(class="ui-body ui-body-d", data-theme='b',align="center")
+			a(class="ui-body ui-body-b", data-theme='b',align="center")
 				| #{studentName} (#{studentID})
 				p
 				| Updated on #{updateDate}
@@ -28,7 +28,7 @@ block content
 								| : #{averages[i].average} %
 							- else if (averages[i].average ==-2)
 								| : Exempt
-					ul(data-role="listview",data-content-theme='d',data-theme='d')
+					ul(data-role="listview",data-content-theme='c',data-theme='c')
 						- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++){					
 						li
 							| #{marks[j].entryName}: 
