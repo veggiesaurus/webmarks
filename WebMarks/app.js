@@ -166,7 +166,7 @@ function displayRandomNames(res, courseCode, seed, numNames)
 	var index=Math.floor((Math.random() * headings.length));
 	//res.render("randomNames", {randomNames:rows, headingText:headings[index]});	
 	
-    connection.query("SELECT DISTINCT studentID, name FROM `"+courseCode+"_students` ORDER BY RAND("+seed+") LIMIT " + numNames,function(err, rows, fields)
+    connection.query("SELECT * FROM (SELECT DISTINCT studentID, name FROM `"+courseCode+"_students` ORDER BY RAND("+seed+") LIMIT " + numNames+") AS randomNames ORDER BY studentID ",function(err, rows, fields)
     {
         if (err) throw err;
         if (rows && rows.length)
