@@ -15,10 +15,22 @@ block content
 		div(data-role='content', align="center")
 			h1(data-theme='b',data-role='header') #{headingText}
 			div 
-				ol(data-role="listview", data-theme='c')			
-					- for (var i = 0; i < names.length; i++) {
-					- if (i %2 == 1 )
-						li(data-theme='b') #{names[i].studentID} (#{names[i].name})
-					- else
-						li(data-theme='c') #{names[i].studentID} (#{names[i].name})
-					- }
+				- if (names.length > 15 ) {
+					ol#namesList(data-role="listview", data-theme='c')			
+						- for (var i = 0; i < names.length; i++) {
+						- if (i %2 == 1)
+							li(data-theme='b') #{names[i].studentID} 
+						- else
+							li(data-theme='c') #{names[i].studentID} 
+						- }
+				- }
+				- else {
+					ol(data-role="listview", data-theme='c')			
+						- for (var i = 0; i < names.length; i++) {
+						- if (i %2 == 1)
+							li(data-theme='b') #{names[i].studentID} (#{names[i].name})
+						- else
+							li(data-theme='c') #{names[i].studentID} (#{names[i].name})
+						- }
+				- }
+
