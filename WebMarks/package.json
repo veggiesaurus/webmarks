@@ -1,12 +1,12 @@
 {
   "name": "ExpressAppMarks",
-  "version": "0.0.1",
+  "version": "0.9.1",
   "description": "ExpressAppMarks",
-  "main": "app.js",  
+  "main": "app.js",
   "dependencies": {
-    "express": "latest",
-    "stylus": "latest",
-    "jade": "latest",
-    "mysql": "latest"
+    "express": "^4.12.4",
+    "jade": "^1.11.0",
+    "mysql": "^2.7.0",
+    "stylus": "^0.51.1"
   }
 }

@@ -30,8 +30,14 @@ window.onload = function ()
 
 function chartBins(courseName, hists)
 {
+
     //create the histogram with empty values
-    var xVals = ["0-9  ", "10-19  ", "20-29  ", "30-39  ", "40-49  ", "50-59  ", "60-69  ", "70-79  ", "80-89  ", "90-100  "];       
+    var xVals = ["0-9  ", "10-19  ", "20-29  ", "30-39  ", "40-49  ", "50-59  ", "60-69  ", "70-79  ", "80-89  ", "90-100  "];
+    
+    var chartSeries = []
+    for (i in hists)
+        chartSeries.push({ name: hists[i].categoryName, data: [hists[i].hist00, hists[i].hist10, hists[i].hist20, hists[i].hist30, hists[i].hist40, hists[i].hist50, hists[i].hist60, hists[i].hist70, hists[i].hist80, hists[i].hist90] });
+    console.log(chartSeries);
     chart = new Highcharts.Chart({
         chart: {
             borderColor: '#000000',
@@ -67,7 +73,6 @@ function chartBins(courseName, hists)
                 text: 'Count'
             }
         },        
-
         tooltip:
         {
             backgroundColor:
@@ -100,9 +105,8 @@ function chartBins(courseName, hists)
                 groupPadding: 0.1,
                 borderWidth: 1
             }
-        }
-    });    
-    for (i in hists)
-        chart.addSeries({name: hists[i].categoryName, data:[hists[i].hist00, hists[i].hist10, hists[i].hist20, hists[i].hist30, hists[i].hist40, hists[i].hist50, hists[i].hist60, hists[i].hist70, hists[i].hist80, hists[i].hist90]}, false);    
+        },
+        series: chartSeries,
+    });
     chart.redraw();
 }
