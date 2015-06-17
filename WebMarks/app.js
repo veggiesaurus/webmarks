@@ -152,7 +152,6 @@ function displayRandomNames(res, courseCode, seed, numNames)
 	//heading
 	var headings=["The Chosen Few", "Today's Contestants", "This Week's Winners"];	
 	var index=Math.floor((Math.random() * headings.length));
-	//res.render("randomNames", {randomNames:rows, headingText:headings[index]});	
 	
     connection.query("SELECT * FROM (SELECT DISTINCT studentID, name FROM `"+courseCode+"_students` ORDER BY RAND("+seed+") LIMIT " + numNames+") AS randomNames ORDER BY studentID ",function(err, rows, fields)
     {

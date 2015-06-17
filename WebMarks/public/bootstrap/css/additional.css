@@ -1,0 +1,9 @@
+/* override bootstrap 3 class to remove scrollbar from modal backdrop
+   when not necessary */
+.modal {
+  overflow-y: auto;
+}
+/* custom class to add space for scrollbar */
+.modal-scrollbar {
+    margin-right: 15px;
+}

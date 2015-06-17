@@ -1,35 +1,24 @@
 extends layout
-block bannerImage
-	div(align="center")
-		p
 
 block headerScripts
 
 block content	
-	div#page1(data-role='page')
-		div(data-theme='b',data-role='header')
-			div(align="center")
-				h3 UCT Physics WPS Lottery 							
-		block bannerImage
-		div(data-role='content', align="center")
-			h1(data-theme='b',data-role='header') #{headingText}
-			div 
-				- if (names.length > 15 ) {
-					ol#namesList(data-role="listview", data-theme='c')			
-						- for (var i = 0; i < names.length; i++) {
-						- if (i %2 == 1)
-							li(data-theme='b') #{names[i].studentID} 
-						- else
-							li(data-theme='c') #{names[i].studentID} 
-						- }
-				- }
-				- else {
-					ol(data-role="listview", data-theme='c')			
-						- for (var i = 0; i < names.length; i++) {
-						- if (i %2 == 1)
-							li(data-theme='b') #{names[i].studentID} (#{names[i].name})
-						- else
-							li(data-theme='c') #{names[i].studentID} (#{names[i].name})
-						- }
-				- }
+	.navbar.navbar-inverse(role = 'navigation')
+		.container
+			.navbar-header
+				.navbar-brand
+					span.fui-document.pad10h
+					|UCT Physics WPS Lottery
+	.container
+		div(align="center")
+			p.lead #{headingText}
+			div 				
+				ul.list-unstyled
+					- for (var i = 0; i < names.length; i++) {
+					- if (i%4 == 3 || i%4 == 0)
+						li.list-group-item.col-xs-6 #{names[i].studentID} (#{names[i].name})
+					- else
+						li.list-group-item.col-xs-6
+							strong #{names[i].studentID} (#{names[i].name})
+					- }
 

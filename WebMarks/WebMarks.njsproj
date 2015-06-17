@@ -36,20 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="public\javascripts\client.js" />
-    <Compile Include="public\javascripts\jquerymobile\jquery.mobile-1.3.2.js" />
-    <Compile Include="public\javascripts\jquerymobile\jquery.mobile-1.3.2.min.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\user.js" />
     <Content Include="package.json" />
     <Content Include="public\images\banner.jpg" />
-    <Content Include="public\javascripts\jquerymobile\jquery.mobile-1.3.2.min.map" />
-    <Content Include="public\stylesheets\jquerymobile\jquery.mobile-1.3.2.min.css" />
-    <Content Include="public\stylesheets\jquerymobile\jquery.mobile.structure-1.3.2.css" />
-    <Content Include="public\stylesheets\jquerymobile\jquery.mobile.structure-1.3.2.min.css" />
-    <Content Include="public\stylesheets\jquerymobile\jquery.mobile.theme-1.3.2.css" />
-    <Content Include="public\stylesheets\jquerymobile\jquery.mobile.theme-1.3.2.min.css" />
-    <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="views\errorDatabase.jade" />
     <Content Include="views\marks.jade" />
@@ -62,13 +52,6 @@
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="public\images\" />
-    <Folder Include="public\javascripts\" />
-    <Folder Include="public\javascripts\highcharts\js\" />
-    <Folder Include="public\javascripts\jquerymobile\" />
-    <Folder Include="public\javascripts\highcharts\" />
-    <Folder Include="public\javascripts\jquery\" />
-    <Folder Include="public\stylesheets\" />
-    <Folder Include="public\stylesheets\jquerymobile\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
   </ItemGroup>

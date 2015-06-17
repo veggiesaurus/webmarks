@@ -1,13 +1,17 @@
 ﻿extends layout
 
-block headerScripts	
-	
+block headerScripts
+
 block content
-	div#page1(data-role='page')
-		div(data-theme='b',data-role='header')
-			div(align="center")
-				h3 UCT Physics WebMarks 
-					div#header #{courseName}			
-		div(data-role='content')
-			a(class="ui-body ui-body-e", align="center")
-				|#{studentID}: Your student number was not found in the #{courseCode} database			
+	.navbar.navbar-inverse(role = 'navigation')
+		.container
+			.navbar-header
+				.navbar-brand
+					span.fui-document.pad10h
+					|#{courseName}
+	.container
+		.row				
+			.col-xs-12					
+				.alert.alert-info
+					span
+						|#{studentID}: Your student number was not found in the #{courseName} database			

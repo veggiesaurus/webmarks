@@ -1,8 +1,6 @@
 ﻿extends layout
 block bannerImage
-	div(align="center")
-		p
-		img(src="/images/banner.jpg")
+	img.pad10v.img-responsive(src="/images/banner.jpg")
 
 block headerScripts
 	script.
@@ -25,16 +23,27 @@ block headerScripts
 		}
 
 block content
-	div#page1(data-role='page')
-		div(data-theme='b',data-role='header')
-			div(align="center")
-				h3 UCT Physics WebMarks
-		block bannerImage 					
-		div(data-role='content', align="center")			
-			div(data-role="fieldcontain", align="center")
-				a(for="selectCourse", class="ui-body ui-body-b", align="center")					
-					input(type="text",name="textName",id="textName", data-clear-btn="true",placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
-					input(type="button", id="buttonViewMarks", name="buttonViewMarks", align="center",data-theme="b",data-corners="false",value="View Marks", onClick="viewMarks()")
-			a(class="ui-body ui-body-b", align="center") Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
-			p
-				a(class="ui-body ui-body-e ", align="center",id="errMissingID") Please enter a student ID
+	.navbar.navbar-inverse(role = 'navigation')
+		.container
+			.navbar-header
+				.navbar-brand
+					span.fui-document.pad10h
+					| UCT Physics Webmarks	
+	block bannerImage
+	.container		
+		.row.pad10v
+			.col-xs-6.col-sm-8
+				input.form-control#textName(type="text",name="textName", placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
+			.col-xs-6.col-sm-4
+					button.btn.btn-primary#buttonViewMarks(name="buttonViewMarks", align="center",onClick="viewMarks()")
+						| View Marks
+		.row#errMissingID
+			.col-xs-12
+				.alert.alert-dismissible.alert-danger
+					span
+						|Please choose your course and enter a student ID
+		.row
+			.col-xs-12
+				.alert.alert-default
+					span
+						|Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL
