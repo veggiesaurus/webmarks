@@ -2,9 +2,10 @@
  * Module dependencies.
  */
 
-var port=3702;
+var port=80;
 
 var express = require('express');
+var favicon = require('serve-favicon');
 var routes = require('./routes');
 var user = require('./routes/user');
 var dbConfig = require('./secrets.json');
@@ -19,7 +20,6 @@ var db_config = {
   password : dbConfig.webmarksPassword,
   database: 'webapp'
 };
-
 
 var connection;
 
@@ -54,7 +54,7 @@ app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);
 app.set('view options', { pretty: true });
 app.use(express.static(__dirname + '/public'));
-
+app.use(favicon(__dirname + '/public/images/favicon.png'));
 app.get("/webmarks/:afterURL(*)", function (req, res) {
     console.log(req.params.afterURL);
     res.redirect("/"+req.params.afterURL);    
