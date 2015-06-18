@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var port=3001;
+var port=3702;
 
 var express = require('express');
 var routes = require('./routes');
@@ -14,7 +14,6 @@ var path = require('path');
 var mysql      = require('mysql');
 
 var db_config = {
-  //host: 'webapp-phy.uct.ac.za',
   host: '127.0.0.1',
   user     : dbConfig.webmarksUser,
   password : dbConfig.webmarksPassword,
@@ -55,6 +54,11 @@ app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);
 app.set('view options', { pretty: true });
 app.use(express.static(__dirname + '/public'));
+
+app.get("/webmarks/:afterURL(*)", function (req, res) {
+    console.log(req.params.afterURL);
+    res.redirect("/"+req.params.afterURL);    
+});
 
 app.get("/:id([0-9]+):courseType(w|f|h|s)\/:studentID", function(req, res)
 {	
