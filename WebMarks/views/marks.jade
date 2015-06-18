@@ -3,7 +3,7 @@ extends layout
 block headerScripts
 	script.
 		var hists=!{hists}
-		var courseName="#{courseName}"		
+		var courseName="#{courseName}"
 	script(src='/highcharts/js/highcharts.js')
 	script(src='/highcharts/js/highcharts-more.js')
 	script(src='/client.js')
@@ -16,15 +16,15 @@ block content
 					span.fui-document.pad10h
 					|#{courseName}
 	.container
-		.alert.alert-default			
+		.alert.alert-default
 			.row
-				.col-xs-12							
+				.col-xs-12
 					|#{studentName} (#{studentID})
-			.row				
+			.row
 				.col-xs-12
 					span.label.label-info
 						| Updated on #{updateDate}
-		.row				
+		.row
 			.col-xs-12
 				.panel-group#accordionMarks(role="tablist", aria-multiselectable="false")
 					- for (var i = 0, j = 0; i < averages.length; i++) {

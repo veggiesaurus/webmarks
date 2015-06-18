@@ -14,11 +14,11 @@ block headerScripts
 			var courseCode=$("#selectCourse").val();
 			if (!studentID || courseCode==-1)				
 			{
-				$("#errMissingID").slideDown();				
+				$("#errMissingID").slideDown();
 				return;
 			}
 			var currentURL=String(window.location);
-			currentURL=currentURL.replace(/\/+$/, "");			
+			currentURL=currentURL.replace(/\/+$/, "");
 			var newURL=(currentURL+"/"+courseCode+"/"+studentID);
 			window.location=newURL;
 		}
@@ -33,13 +33,13 @@ block content
 	block bannerImage
 	.container
 		.row
-			.col-xs-12		
-				a(for="selectCourse", align="center")					
+			.col-xs-12
+				a(for="selectCourse", align="center")
 					select#selectCourse(name="selectCourse", align="center")
 						option(value="-1") Select your course...
-						- for (var i = 0; i < courseInfo.length; i++) {				
+						- for (var i = 0; i < courseInfo.length; i++) {
 						option(value="#{courseInfo[i].coursePrefix}") #{courseInfo[i].courseName}
-						- }	
+						- }
 		.row.pad10v
 			.col-xs-6.col-sm-8
 				input.form-control#textName(type="text",name="textName", placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
