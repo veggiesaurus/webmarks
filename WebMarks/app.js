@@ -61,6 +61,14 @@ app.get("/webmarks/:afterURL(*)", function (req, res) {
     res.redirect("/"+req.params.afterURL);    
 });
 
+app.get("/webmarks", function (req, res) {
+    res.redirect("/");
+});
+
+app.get("/poll", function (req, res) {
+    res.render("errorGeneric", { errorInfo: "The polling app has moved to polling.uct.ac.za" });
+});
+
 app.get("/poll/:afterURL(*)", function (req, res) {
     res.render("errorGeneric", { errorInfo: "The polling app has moved to polling.uct.ac.za"});
 });
@@ -215,6 +223,10 @@ app.get("/", function(req, res)
             res.render("errorDatabase");
         }
     });
+});
+
+app.get('*', function (req, res) {
+    res.redirect("/");
 });
 
 app.listen(port);
