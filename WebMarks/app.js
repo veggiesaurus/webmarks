@@ -55,9 +55,14 @@ app.engine('jade', require('jade').__express);
 app.set('view options', { pretty: true });
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/images/favicon.png'));
+
+//redirects
 app.get("/webmarks/:afterURL(*)", function (req, res) {
-    console.log(req.params.afterURL);
     res.redirect("/"+req.params.afterURL);    
+});
+
+app.get("/poll/:afterURL(*)", function (req, res) {
+    res.render("errorGeneric", { errorInfo: "The polling app has moved to polling.uct.ac.za"});
 });
 
 app.get("/:id([0-9]+):courseType(w|f|h|s)\/:studentID", function(req, res)

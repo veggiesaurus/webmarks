@@ -1,0 +1,16 @@
+﻿.row.pad10v
+			.col-xs-6.col-sm-8
+				input.form-control#textName(type="text",name="textName", placeholder="Student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
+			.col-xs-6.col-sm-4
+					button.btn.btn-info#buttonViewMarks(name="buttonViewMarks", align="center",onClick="viewMarks()")
+						| View Marks
+		.row#errMissingID
+			.col-xs-12
+				.alert.alert-dismissible.alert-danger
+					span
+						|Please choose your course and enter a student ID
+		.row
+			.col-xs-12
+				.alert.alert-default
+					span
+						|Please note: for quick access, you can append your course code (e.g. /1004w) and student ID (e.g. /testid001) to the WebMarks URL

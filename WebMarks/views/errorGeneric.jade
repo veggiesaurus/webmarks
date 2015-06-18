@@ -1,0 +1,18 @@
+﻿extends layout
+
+block headerScripts
+
+block content
+	.navbar.navbar-inverse(role = 'navigation')
+		.container
+			.navbar-header
+				.navbar-brand
+					span.fui-document.pad10h
+					| UCT Physics
+	.container
+		.row
+			.col-xs-12
+				.alert.alert-danger
+					span.fui-alert-circle.pad10h
+					span
+						|#{errorInfo}

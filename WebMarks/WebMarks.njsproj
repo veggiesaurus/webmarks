@@ -42,6 +42,8 @@
     <Content Include="public\images\banner.jpg" />
     <Content Include="README.md" />
     <Content Include="views\errorDatabase.jade" />
+    <Content Include="views\errorGeneric.jade" />
+    <Content Include="views\includes\commonInput.jade" />
     <Content Include="views\marks.jade" />
     <Content Include="views\invalidCourse.jade" />
     <Content Include="views\invalidStudent.jade" />
@@ -54,6 +56,7 @@
     <Folder Include="public\images\" />
     <Folder Include="routes\" />
     <Folder Include="views\" />
+    <Folder Include="views\includes\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
