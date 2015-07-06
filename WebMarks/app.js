@@ -72,6 +72,7 @@ app.get("/poll/:afterURL(*)", function (req, res) {
 });
 
 require('./routes/selectStudent')(app, connection);
+require('./routes/marks')(app, connection);
 
 
 require('./routes/randomNames')(app, connection);
