@@ -6,8 +6,6 @@ var port=80;
 
 var express = require('express');
 var favicon = require('serve-favicon');
-var routes = require('./routes');
-var user = require('./routes/user');
 var dbConfig = require('./secrets.json');
 var http = require('http');
 var path = require('path');
@@ -153,7 +151,6 @@ app.get("/:id([0-9]+):courseType(w|f|h|s)\/:studentID", function(req, res)
                 {
                     res.render("invalidStudent", {courseCode:rows[0].coursePrefix, courseName:rows[0].courseName, studentID:studentID});
                 }
-
             });            
         }
         else

@@ -36,8 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="routes\index.js" />
-    <Compile Include="routes\user.js" />
     <Content Include="package.json" />
     <Content Include="public\images\banner.jpg" />
     <Content Include="README.md" />
@@ -54,7 +52,6 @@
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="public\images\" />
-    <Folder Include="routes\" />
     <Folder Include="views\" />
     <Folder Include="views\includes\" />
   </ItemGroup>
