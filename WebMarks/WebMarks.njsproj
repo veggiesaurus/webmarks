@@ -36,6 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="routes\marks.js" />
+    <Compile Include="routes\randomNames.js" />
+    <Compile Include="routes\selectStudent.js" />
     <Content Include="package.json" />
     <Content Include="public\images\banner.jpg" />
     <Content Include="README.md" />
@@ -50,6 +53,7 @@
     <Content Include="views\selectStudent.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="routes\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="views\" />
