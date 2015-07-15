@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var port=80;
+
 
 var express = require('express');
 var favicon = require('serve-favicon');
@@ -18,6 +18,8 @@ var db_config = {
   password : dbConfig.webmarksPassword,
   database: 'webapp'
 };
+
+var port=process.env.PORT || 80;
 
 var connection;
 
@@ -64,11 +66,11 @@ app.get("/webmarks", function (req, res) {
 });
 
 app.get("/poll", function (req, res) {
-    res.render("errorGeneric", { errorInfo: "The polling app has moved to polling.uct.ac.za" });
+    res.redirect('http://polling.uct.ac.za');    
 });
 
 app.get("/poll/:afterURL(*)", function (req, res) {
-    res.render("errorGeneric", { errorInfo: "The polling app has moved to polling.uct.ac.za"});
+    res.redirect('http://polling.uct.ac.za/'+req.params.afterURL)    
 });
 
 require('./routes/selectStudent')(app, connection);
@@ -81,4 +83,11 @@ app.get('*', function (req, res) {
     res.redirect("/");
 });
 
-app.listen(port);
+if (process.env.LISTEN_HOST)
+	app.listen(port, process.env.LISTEN_HOST, function(){
+	console.log('Listening on port '+port+' and address '+process.env.LISTEN_HOST);
+});
+else
+	app.listen(port, function(){
+	console.log('Listening on port '+port);
+});
