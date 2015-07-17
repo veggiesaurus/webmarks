@@ -1,6 +1,4 @@
 ﻿extends layout
-block bannerImage
-	img.pad10v.img-responsive(src="/images/banner.jpg")
 
 block headerScripts
 	script.
@@ -27,8 +25,18 @@ block content
 		.container
 			.navbar-header
 				.navbar-brand
-					span.fui-document.pad10h
-					| UCT Physics Webmarks	
-	block bannerImage
+					span.glyphicon.glyphicon-list-alt 
+					|UCT Physics Webmarks	
+	include includes/bannerImage.jade
 	.container
-		include includes/commonInput.jade
+		.panel.panel-primary
+			.panel-heading
+				h3.panel-title Student details
+			.panel-body
+				.row.pad5v
+					.col-xs-12
+						input.form-control#textName(type="text",name="textName", placeholder="Enter your student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
+				.row.pad5v					
+					.col-xs-12.col-sm-6.col-md-4
+						button.btn.btn-primary.btn-block#buttonViewMarks(name="buttonViewMarks", align="center",onClick="viewMarks()") View Marks
+		include includes/commonAlerts.jade

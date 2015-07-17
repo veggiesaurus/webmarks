@@ -1,14 +1,9 @@
-/**
- * Module dependencies.
- */
-
-
-
 var express = require('express');
 var favicon = require('serve-favicon');
 var dbConfig = require('./secrets.json');
 var http = require('http');
 var path = require('path');
+var sassMiddleware = require('node-sass-middleware');
 
 var mysql      = require('mysql');
 
@@ -55,6 +50,18 @@ app.engine('jade', require('jade').__express);
 app.set('view options', { pretty: true });
 app.use(express.static(__dirname + '/public'));
 app.use(favicon(__dirname + '/public/images/favicon.png'));
+
+//sass config
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'sass'),
+    dest: path.join(__dirname, 'public/css'),
+    debug: true,
+    outputStyle: 'compressed',
+    response: true,
+    prefix: '/css'
+}));
+
 
 //redirects
 app.get("/webmarks/:afterURL(*)", function (req, res) {

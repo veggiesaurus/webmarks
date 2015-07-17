@@ -25,7 +25,7 @@
     <OutputPath>.</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <NodejsPort>3001</NodejsPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -36,26 +36,135 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\js\client.js" />
+    <Compile Include="public\js\lib\bootstrap\bootstrap-select.min.js" />
+    <Compile Include="public\js\lib\bootstrap\bootstrap.min.js" />
+    <Compile Include="public\js\lib\highcharts\highcharts-more.js" />
+    <Compile Include="public\js\lib\highcharts\highcharts.js" />
+    <Compile Include="public\js\lib\jquery\jquery-1.11.3.min.js" />
     <Compile Include="routes\marks.js" />
     <Compile Include="routes\randomNames.js" />
     <Compile Include="routes\selectStudent.js" />
     <Content Include="package.json" />
+    <Content Include="public\css\bootstrap-select.min.css" />
+    <Content Include="public\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\fonts\FontAwesome.otf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\fonts\icomoon.eot" />
+    <Content Include="public\fonts\icomoon.svg" />
+    <Content Include="public\fonts\icomoon.ttf" />
+    <Content Include="public\fonts\icomoon.woff" />
     <Content Include="public\images\banner.jpg" />
+    <Content Include="public\images\bannerTrans.png" />
+    <Content Include="public\images\favicon.png" />
     <Content Include="README.md" />
+    <Content Include="sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="sass\bootstrap\mixins\_image.scss" />
+    <Content Include="sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="sass\bootstrap\mixins\_size.scss" />
+    <Content Include="sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="sass\bootstrap\_alerts.scss" />
+    <Content Include="sass\bootstrap\_badges.scss" />
+    <Content Include="sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="sass\bootstrap\_button-groups.scss" />
+    <Content Include="sass\bootstrap\_buttons.scss" />
+    <Content Include="sass\bootstrap\_carousel.scss" />
+    <Content Include="sass\bootstrap\_close.scss" />
+    <Content Include="sass\bootstrap\_code.scss" />
+    <Content Include="sass\bootstrap\_component-animations.scss" />
+    <Content Include="sass\bootstrap\_dropdowns.scss" />
+    <Content Include="sass\bootstrap\_forms.scss" />
+    <Content Include="sass\bootstrap\_glyphicons.scss" />
+    <Content Include="sass\bootstrap\_grid.scss" />
+    <Content Include="sass\bootstrap\_input-groups.scss" />
+    <Content Include="sass\bootstrap\_jumbotron.scss" />
+    <Content Include="sass\bootstrap\_labels.scss" />
+    <Content Include="sass\bootstrap\_list-group.scss" />
+    <Content Include="sass\bootstrap\_media.scss" />
+    <Content Include="sass\bootstrap\_mixins.scss" />
+    <Content Include="sass\bootstrap\_modals.scss" />
+    <Content Include="sass\bootstrap\_navbar.scss" />
+    <Content Include="sass\bootstrap\_navs.scss" />
+    <Content Include="sass\bootstrap\_normalize.scss" />
+    <Content Include="sass\bootstrap\_pager.scss" />
+    <Content Include="sass\bootstrap\_pagination.scss" />
+    <Content Include="sass\bootstrap\_panels.scss" />
+    <Content Include="sass\bootstrap\_popovers.scss" />
+    <Content Include="sass\bootstrap\_print.scss" />
+    <Content Include="sass\bootstrap\_progress-bars.scss" />
+    <Content Include="sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="sass\bootstrap\_scaffolding.scss" />
+    <Content Include="sass\bootstrap\_tables.scss" />
+    <Content Include="sass\bootstrap\_theme.scss" />
+    <Content Include="sass\bootstrap\_thumbnails.scss" />
+    <Content Include="sass\bootstrap\_tooltip.scss" />
+    <Content Include="sass\bootstrap\_type.scss" />
+    <Content Include="sass\bootstrap\_utilities.scss" />
+    <Content Include="sass\bootstrap\_variables.scss" />
+    <Content Include="sass\bootstrap\_wells.scss" />
+    <Content Include="sass\sitestyle.scss" />
+    <Content Include="sass\_variables_site.scss" />
+    <Content Include="secrets.json.EXAMPLE" />
     <Content Include="views\errorDatabase.jade" />
     <Content Include="views\errorGeneric.jade" />
-    <Content Include="views\includes\commonInput.jade" />
+    <Content Include="views\includes\bannerImage.jade" />
+    <Content Include="views\includes\commonAlerts.jade" />
     <Content Include="views\marks.jade" />
     <Content Include="views\invalidCourse.jade" />
     <Content Include="views\invalidStudent.jade" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\randomNames.jade" />
     <Content Include="views\selectCourse.jade" />
     <Content Include="views\selectStudent.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="public\css\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\js\lib\" />
+    <Folder Include="public\js\lib\bootstrap\" />
+    <Folder Include="public\js\lib\highcharts\" />
+    <Folder Include="public\js\lib\jquery\" />
     <Folder Include="routes\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
+    <Folder Include="sass\" />
+    <Folder Include="sass\bootstrap\" />
+    <Folder Include="sass\bootstrap\mixins\" />
     <Folder Include="views\" />
     <Folder Include="views\includes\" />
   </ItemGroup>

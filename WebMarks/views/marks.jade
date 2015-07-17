@@ -4,31 +4,30 @@ block headerScripts
 	script.
 		var hists=!{hists}
 		var courseName="#{courseName}"
-	script(src='/highcharts/js/highcharts.js')
-	script(src='/highcharts/js/highcharts-more.js')
-	script(src='/client.js')
+	script(src='/js/lib/highcharts/highcharts.js')
+	script(src='/js/lib/highcharts/highcharts-more.js')
+	script(src='/js/client.js')
 
 block content
 	.navbar.navbar-inverse(role = 'navigation')
 		.container
 			.navbar-header
 				.navbar-brand
-					span.fui-document.pad10h
+					span.glyphicon.glyphicon-list-alt
 					|#{courseName}
 	.container
-		.alert.alert-default
+		.alert.alert-default#studentInfo
 			.row
 				.col-xs-12
-					|#{studentName} (#{studentID})
+					span #{studentName} (#{studentID})
 			.row
 				.col-xs-12
-					span.label.label-info
-						| Updated on #{updateDate}
+					span.label.label-primary Updated on #{updateDate}
 		.row
 			.col-xs-12
 				.panel-group#accordionMarks(role="tablist", aria-multiselectable="false")
 					- for (var i = 0, j = 0; i < averages.length; i++) {
-					- var panelClass="panel-info";
+					- var panelClass="panel-primary";
 					if (averages[i].average>=70)
 						- panelClass="panel-success"
 					else if (averages[i].average>=55)
@@ -48,18 +47,16 @@ block content
 											| : Exempt
 						.panel-collapse.collapse(roll="tabpanel", id="collapse"+i, aria-labelledby="headingCategory"+i)
 							.panel-body
-								.row
-									.col-xs-12
-										ul.list-unstyled
-										- var categoryEntries=0;
-										- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++, categoryEntries++){
-											li.list-unstyled
-												| #{marks[j].entryName}: 
-												| #{marks[j].mark} / #{marks[j].maxMarks}
-										- }	
-										if !categoryEntries
-											strong 
-												| No entries found
+								ul.list-unstyled
+									- var categoryEntries=0;
+									- for (;j<marks.length && averages[i].typeID==marks[j].typeID;j++, categoryEntries++){
+										li.list-unstyled
+											| #{marks[j].entryName}: 
+											| #{marks[j].mark} / #{marks[j].maxMarks}
+									- }	
+								if !categoryEntries
+									strong 
+										| No entries found
 						
 					- }
 		#chart_container(data-role='content')
