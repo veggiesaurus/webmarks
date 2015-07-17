@@ -69,7 +69,7 @@ function chartBins(courseName, hists)
         },
         xAxis: {
             categories: xVals,
-            labels: { align: "center", y: 50, rotation: -90 }
+            labels: { align: "center", y: 30, rotation: -90 }
         },
         yAxis: {
             min: 0,
