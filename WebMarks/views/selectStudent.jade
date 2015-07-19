@@ -25,8 +25,8 @@ block content
 		.container
 			.navbar-header
 				.navbar-brand
-					span.glyphicon.glyphicon-list-alt 
-					|UCT Physics Webmarks	
+					span.glyphicon.glyphicon-list-alt
+					|UCT Physics Webmarks
 	include includes/bannerImage.jade
 	.container
 		.panel.panel-primary
@@ -36,7 +36,7 @@ block content
 				.row.pad5v
 					.col-xs-12
 						input.form-control#textName(type="text",name="textName", placeholder="Enter your student ID" ,onkeydown="if (event.keyCode == 13) viewMarks()")
-				.row.pad5v					
+				.row.pad5v
 					.col-xs-12.col-sm-6.col-md-4
 						button.btn.btn-primary.btn-block#buttonViewMarks(name="buttonViewMarks", align="center",onClick="viewMarks()") View Marks
 		include includes/commonAlerts.jade

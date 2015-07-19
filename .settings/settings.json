@@ -1,0 +1,15 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		".settings": true,
+		"WebMarks/node_modules": true,
+		"WebMarks/obj": true,
+		"WebMarks/*.njsproj":true,
+		".gitattributes":true,
+		"*.xlsm": true,
+		"*.sln":true,
+		"*.suo":true,
+		"*.zip":true		
+	}
+}

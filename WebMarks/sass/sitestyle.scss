@@ -2,10 +2,10 @@
 @import "bootstrap-compass";
 // Import custom Bootstrap variables
 @import "variables_paper";
+@import "variables_site";
 // Import Bootstrap for Sass
 @import "bootstrap";
 @import "bootswatch_paper";
-@import "variables_site";
 
 @mixin panelColor($color){
     border-color: $color;
@@ -18,26 +18,27 @@
 @mixin alertColor($color){
     border-color: $color;
     background-color: $color;
-    border-color: $color;
-	span{
-		font-weight: bold;
-		color: white;
-	}
+    border-color: $color;	
 }
+
+.navbar-brand{
+    font-size: 20px;
+    padding-top:12px;
+    .glyphicon{
+        margin-right: 5px;
+        top: 2px;
+    }        
+}
+
 
 .col-centered{
     float: none;
     margin: 0 auto;
 }
 
-.panel{
-    @if $ui-border-radius>0 { border-radius: $ui-border-radius+2;  }
-    @else {border-radius: $ui-border-radius};
+.panel{   
     .panel-heading{
-        color: white;
-        border-radius: $ui-border-radius;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        color: white;       
     }
 }
 
@@ -51,30 +52,23 @@
 .panel-disabled{@include panelColor($brand-disabled);}
 
 .alert{
-	border-radius: $ui-border-radius;	
+	color: white;
 }
+
 .alert-primary{@include alertColor($brand-primary);}
 .alert-warning{@include alertColor($brand-warning);}
-.alert-default{@include alertColor($brand-default);}
 .alert-danger{@include alertColor($brand-danger);}
 .alert-success{@include alertColor($brand-success);}
 .alert-inverse{@include alertColor($brand-inverse);}
 .alert-info{@include alertColor($brand-info);}
 .alert-disabled{@include alertColor($brand-disabled);}
-
-.btn{
-    border-radius: $ui-border-radius;
+.alert-default{
+    @include alertColor($brand-default);
+    color:darken($brand-primary, 30);;    
 }
 
-.navbar{
-    border-radius: 0px;
-}
-
-.navbar-brand{
-    .glyphicon{
-        padding-right:10px;
-        top:3px;
-    }
+.label{
+    font-weight: normal;
 }
 
 #banner{
@@ -90,10 +84,7 @@
 
 #studentInfo{
     .row:first-of-type{
-        margin-bottom:5px;
-        span{
-            color:darken($brand-primary, 30);;
-        }
+        margin-bottom:5px;       
     }
 
     span{
@@ -109,12 +100,6 @@
         ul{
             margin-bottom:0px;
         }
-    }
-}
-
-.alert-info,.alert-default,.alert-primary{
-    span{
-        font-weight:lighter;
     }
 }
 
