@@ -21,6 +21,30 @@
     border-color: $color;	
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 25px;
+    background-color: lighten($brand-primary, 40);
+    p {
+        text-align: center;
+        color: darken($brand-primary, 10);
+        margin-bottom: 0px;
+    }
+}
+
+
 .navbar-brand{
     font-size: 20px;
     padding-top:12px;
