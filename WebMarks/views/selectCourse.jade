@@ -41,7 +41,7 @@ block content
 				.row.pad5v
 					.col-xs-7.col-sm-4.col-md-3
 						a(for="selectCourse", align="center")
-							select#selectCourse.selectpicker(name="selectCourse", align="center", data-width="100%", title='Select your course...')
+							select#selectCourse.selectpicker(name="selectCourse", align="center", data-width="100%", title='Select course')
 								- for (var i = 0; i < courseInfo.length; i++) {
 								option(value="#{courseInfo[i].coursePrefix}") #{courseInfo[i].courseName}
 								- }
