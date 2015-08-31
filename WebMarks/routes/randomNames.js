@@ -16,15 +16,15 @@
 }
 
 
-//rand\/([0-9]+)(w|f|h|s)\/seed\/(\d+)
+
 module.exports = function (app, connection) {      
-    app.get("\/rand\/:id([0-9]+):courseType(w|f|h|s)\/seed\/:seedVal(\d+)", function (req, res) {
+    app.get("/rand/:id([0-9]+):courseType(w|f|h|s)\/seed/:seedVal([0-9]+)", function (req, res) {
         var urlCourseCode = req.params.id + req.params.courseType;
         var seed = req.params.seedVal;
         displayRandomNames(connection, res, urlCourseCode, seed, 10);
     });
     
-    app.get("\/rand\/:id([0-9]+):courseType(w|f|h|s)\/num\/:numVal\/seed\/:seedVal(\d+)", function (req, res) {
+    app.get("/rand/:id([0-9]+):courseType(w|f|h|s)\/num/:numVal([0-9]+)/seed/:seedVal([0-9]+)", function (req, res) {
         var urlCourseCode = req.params.id + req.params.courseType;
         var seed = req.params.seedVal;
         var numNames = req.params.numVal;
