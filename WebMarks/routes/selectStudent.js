@@ -9,7 +9,10 @@
         var studentID = req.params.studentID;
         //get course info
         connection.query("SELECT coursePrefix, courseName FROM `info`", function (err, rows, fields) {
-            if (err) throw err;
+            if (err){
+                console.log(err);
+                res.render("errorDatabase");
+            }
             if (rows && rows.length) {
                 res.render("selectCourse", { courseInfo: rows });
             }
