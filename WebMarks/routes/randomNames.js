@@ -5,7 +5,8 @@
     var index = Math.floor((Math.random() * headings.length));
     
     connection.query("SELECT * FROM (SELECT DISTINCT studentID, name FROM `" + courseCode + "_students` ORDER BY RAND(" + seed + ") LIMIT " + numNames + ") AS randomNames ORDER BY studentID ", function (err, rows, fields) {
-        if (err) throw err;
+        if (err)
+            res.render("errorDatabase");
         if (rows && rows.length) {
             res.render("randomNames", { names: rows, headingText: headings[index] });
         }
