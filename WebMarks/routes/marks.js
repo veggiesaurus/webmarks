@@ -46,9 +46,9 @@
                                                         return;
                                                     }
                                                     if (rowsHists && rowsHists.length)
-                                                        res.render("marks", { courseCode: urlCourseCode, courseName: rows[0].courseName, numCategories: rows[0].numCategories, updateDate: rows[0].updateDate.toDateString(), cats: rowsCats, averages: rowsAverages, studentID: rowsStudent[0].studentID, studentName: rowsStudent[0].name.replace(',', ', '), marks: rowsMarks, hists: JSON.stringify(rowsHists) });
+                                                        res.render("marks", { courseCode: urlCourseCode, courseName: rows[0].courseName, numCategories: rows[0].numCategories, updateDate: rows[0].updateDate.toDateString(), cats: rowsCats, averages: rowsAverages, studentID: rowsStudent[0].studentID, studentName: rowsStudent[0].name.replace(',', ', '), dpStatus: rowsStudent[0].DP, marks: rowsMarks, hists: JSON.stringify(rowsHists) });
                                                     else
-                                                        res.render("marks", { courseCode: urlCourseCode, courseName: rows[0].courseName, numCategories: rows[0].numCategories, updateDate: rows[0].updateDate.toDateString(), cats: rowsCats, averages: rowsAverages, studentID: rowsStudent[0].studentID, studentName: rowsStudent[0].name.replace(',', ', '), marks: rowsMarks, hists: -1 });
+                                                        res.render("marks", { courseCode: urlCourseCode, courseName: rows[0].courseName, numCategories: rows[0].numCategories, updateDate: rows[0].updateDate.toDateString(), cats: rowsCats, averages: rowsAverages, studentID: rowsStudent[0].studentID, studentName: rowsStudent[0].name.replace(',', ', '), dpStatus: rowsStudent[0].DP, marks: rowsMarks, hists: -1 });
                                             
                                                 });
                                             }
