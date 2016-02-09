@@ -19,7 +19,12 @@ block content
 		.alert.alert-default#studentInfo
 			.row
 				.col-xs-12
-					span #{studentName} (#{studentID}) #{dpStatus}
+					span #{studentName} (#{studentID})
+            - if (dpStatus) {
+                .row
+				.col-xs-12
+					span.label.label-primary DP Status: #{dpStatus}    
+            - }
 			.row
 				.col-xs-12
 					span.label.label-primary Updated on #{updateDate}
