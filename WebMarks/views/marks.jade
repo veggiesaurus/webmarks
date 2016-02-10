@@ -22,8 +22,11 @@ block content
 					span #{studentName} (#{studentID})
 			- if (dpStatus) {
 				.row
-				.col-xs-12
-					span.label.label-primary DP Status: #{dpStatus}    
+					.col-xs-12
+						- var labelClass="label-danger";
+						if (dpStatus=="DP")
+							- labelClass="label-success"										
+						span.label(class=labelClass) DP Status: #{dpStatus}    
 			- }
 			.row
 				.col-xs-12
