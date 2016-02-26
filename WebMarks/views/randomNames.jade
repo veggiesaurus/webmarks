@@ -13,12 +13,12 @@ block content
 		div(align="center")
 			p.lead #{headingText}
 			div 				
-				ul.list-unstyled
+				ul.list-unstyled#nameList
 					- for (var i = 0; i < names.length; i++) {
-					- if (i%4 == 3 || i%4 == 0)
-						li.list-group-item.col-xs-6 #{names[i].studentID} (#{names[i].name})
+					- if (i%2 == 0)
+						li.list-group-item.col-xs-4 #{names[i].studentID}
 					- else
-						li.list-group-item.col-xs-6
-							strong #{names[i].studentID} (#{names[i].name})
+						li.list-group-item.col-xs-4
+							strong #{names[i].studentID}
 					- }
 
